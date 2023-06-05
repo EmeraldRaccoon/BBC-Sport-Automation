@@ -1,0 +1,20 @@
+{
+  "puppeteerOptions": {
+    "headless": false,
+    "defaultViewport": {
+        "width": 1920,
+        "height": 1080
+    }
+  },
+  
+  "dependencies": {
+    "puppeteer": "^20.5.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.1.2"
+  },
+  "scripts": {
+    "test": "cucumber-js"
+  }
+}
+    
