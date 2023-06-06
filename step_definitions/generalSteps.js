@@ -48,13 +48,18 @@ async function wait() {
 
 }
 
-// Capture screenshot
+// Capture full page screenshot
 async function takeScreenshot() {
-  /*await page.screenshot({
+    await page.screenshot({
     path: 'C:/repos/Projects/football_scores/screenshots/screenshot.jpg'
-  })*/
-    await page.waitForSelector('#u8081644950679367 > div > div:nth-child(2) > div > div > div.qa-tables > div > div > table');          // wait for the selector to load
-    const element = await page.$('#u8081644950679367 > div > div:nth-child(2) > div > div > div.qa-tables > div > div > table');        // declare a variable with an ElementHandle
+  })
+    
+};
+
+// Capture screenshot
+async function takeElementScreenshot() {
+    await page.waitForSelector('#u8081644950679367 > div > div:nth-child(2) > div > div > div.qa-tables > div > div > table');
+    const element = await page.$('#u8081644950679367 > div > div:nth-child(2) > div > div > div.qa-tables > div > div > table');
     await element.screenshot({path: 'C:/repos/Projects/football_scores/screenshots/premtable.png'});
 };
 
@@ -69,6 +74,7 @@ module.exports = {
     loadPage,
     clickElementByText,
     takeScreenshot,
+    takeElementScreenshot,
     closeBrowser,
     wait
 
