@@ -7,7 +7,7 @@ let page;
 // Launches web browser
 async function launchBrowser() {
     browser = await puppeteer.launch({
-      headless: false
+      headless: true
   });
 
     page = await browser.newPage();
@@ -31,7 +31,7 @@ async function loadPage(url) {
 
 // Clicks on element
 async function clickElementByText(text) {
-    const elementText = 'Tables';
+    const elementText = text;
     const element = await page.$('xpath=//*[contains(text(), "' + elementText + '")]');
   
     if (element) {
@@ -43,8 +43,9 @@ async function clickElementByText(text) {
 }
 
 //Wait for 3 seconds
-async function wait() {
-  await page.waitForTimeout(3 * 1000);
+async function wait(time) {
+    const waitTime = time;
+    await page.waitForTimeout(waitTime * 1000);
 
 }
 

@@ -10,17 +10,17 @@ When('i open a browser', async function () {
 });
 
 Then('i open the url {string}', async function (string) {
-    await generalSteps.loadPage(links.bbcFootball);
+    await generalSteps.loadPage(string);
 
 });
 
 Then('i click the {string} element', async function (string) {
-    await generalSteps.clickElementByText();
+    await generalSteps.clickElementByText(string);
     
 });
 
 Then('i wait for {int} seconds', async function (int) {
-    await generalSteps.wait(3);
+    await generalSteps.wait(int);
 
 });
 
