@@ -51,7 +51,7 @@ async function wait() {
 // Capture full page screenshot
 async function takeScreenshot() {
     await page.screenshot({
-    path: 'C:/repos/Projects/football_scores/screenshots/fullpage.jpg'
+      path: '../football_scores/screenshots/fullpage.jpg'
   })
     
 };
@@ -60,7 +60,8 @@ async function takeScreenshot() {
 async function takeElementScreenshot() {
     await page.waitForSelector('#u8081644950679367 > div > div:nth-child(2) > div > div > div.qa-tables > div > div > table');
     const element = await page.$('#u8081644950679367 > div > div:nth-child(2) > div > div > div.qa-tables > div > div > table');
-    await element.screenshot({path: 'C:/repos/Projects/football_scores/screenshots/premtable.png'});
+    await element.screenshot({
+      path: '../football_scores/screenshots/premtable.jpg'});
 };
 
 // Close the browser
