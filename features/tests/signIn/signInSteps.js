@@ -10,7 +10,7 @@ When('i open a browser', async function () {
 });
 
 Then('i open the url {string}', async function (string) {
-    await generalSteps.loadPage(links.google);
+    await generalSteps.loadPage(links.bbcFootball);
 
 });
 

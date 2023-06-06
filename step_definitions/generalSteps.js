@@ -16,7 +16,12 @@ async function launchBrowser() {
 
 // Navigates to URL
 async function loadPage(url) {
-    //await page.setViewport({ width: 1920, height: 1080});
+    await page.setViewport({ width: 1920, height: 1080});
+    //accepts cookies
+    page.on('dialog', async dialog => {
+      await dialog.accept();
+    })
+    //
     await page.goto(url, {
       waitUntil: "networkidle2",
       timeout: 60000
@@ -26,7 +31,7 @@ async function loadPage(url) {
 
 // Clicks on element
 async function clickElementByText(text) {
-    const elementText = 'About';
+    const elementText = 'Tables';
     const element = await page.$('xpath=//*[contains(text(), "' + elementText + '")]');
   
     if (element) {
@@ -45,10 +50,12 @@ async function wait() {
 
 // Capture screenshot
 async function takeScreenshot() {
-  await page.screenshot({
+  /*await page.screenshot({
     path: 'C:/repos/Projects/football_scores/screenshots/screenshot.jpg'
-  })
-  
+  })*/
+    await page.waitForSelector('#u8081644950679367 > div > div:nth-child(2) > div > div > div.qa-tables > div > div > table');          // wait for the selector to load
+    const element = await page.$('#u8081644950679367 > div > div:nth-child(2) > div > div > div.qa-tables > div > div > table');        // declare a variable with an ElementHandle
+    await element.screenshot({path: 'C:/repos/Projects/football_scores/screenshots/premtable.png'});
 };
 
 // Close the browser
