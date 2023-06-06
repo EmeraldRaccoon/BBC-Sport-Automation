@@ -8,4 +8,5 @@ Feature: SignIn Feature
         Then i click the 'Tables' element
         Then i wait for 3 seconds
         Then i take a screenshot of the page
+        Then i take a screenshot of the table element
         Then i close the browser

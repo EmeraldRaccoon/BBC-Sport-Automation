@@ -51,7 +51,7 @@ async function wait() {
 // Capture full page screenshot
 async function takeScreenshot() {
     await page.screenshot({
-    path: 'C:/repos/Projects/football_scores/screenshots/screenshot.jpg'
+    path: 'C:/repos/Projects/football_scores/screenshots/fullpage.jpg'
   })
     
 };

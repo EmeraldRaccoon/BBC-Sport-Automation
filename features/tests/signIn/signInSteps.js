@@ -29,6 +29,11 @@ Then('i take a screenshot of the page', async function () {
 
 });
 
+Then('i take a screenshot of the table element', async function () {
+    await generalSteps.takeElementScreenshot();
+
+});
+
 Then('i close the browser', async function () {
     await generalSteps.closeBrowser();
 
