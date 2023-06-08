@@ -24,8 +24,8 @@ Then('i wait for {int} seconds', async function (int) {
 
 });
 
-Then('i take a screenshot of the page', async function () {
-    await generalSteps.takeScreenshot();
+Then('i take a screenshot of the {string} page', async function (string) {
+    await generalSteps.takeScreenshot(string);
 
 });
 
